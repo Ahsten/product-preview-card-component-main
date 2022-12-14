@@ -1,0 +1,135 @@
+:root{
+    --dark-cyan-400: hsl(158, 36%, 37%);
+    --dark-cyan-500: hsl(158, 36%, 20%);
+    --cream-200: hsl(30, 38%, 92%);
+
+    --very-dark-blue-900:  hsl(212, 21%, 14%);
+    --dark-grayish-blue-400: hsl(228, 12%, 48%);
+    --white-100: hsl(0, 0%, 100%);
+
+    --font-accent: 'Fraunces', serif;
+    --font-base: 'Montserrat', sans-serif;
+
+    --fw-regular: 500;
+    --fw-bold: 700;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  * {
+    margin: 0;
+  }
+  html, body {
+    height: 100%;
+  }
+  body {
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  input, button, textarea, select {
+    font: inherit;
+  }
+  h1, h2, h3{
+    line-height: 1;
+  }
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  #root, #__next {
+    isolation: isolate;
+  }
+
+body {
+    font-family: var(--font-base);
+    font-weight: var(--fw-regular);
+    font-size: 0.875rem;
+    color: var(--dark-grayish-blue-400);
+    background-color: var(--cream-200);
+
+    display: grid;
+    place-content: center;
+    margin: 1rem;
+}
+
+.button {
+    cursor: pointer;
+    padding: .75rem 1.5rem;
+    border: 0;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--dark-cyan-400);
+    color: var(--white-100);
+    font-weight: var(--fw-bold);
+    font-size: 0.925rem;
+}
+
+.button:is(:hover, :focus){
+    background-color: var(--dark-cyan-500);
+}
+
+.button[data-icon="shopping-cart"]::before {
+    content: "";
+    width: 15px;
+    height: 16px;
+    background-image: url("./images/icon-cart.svg")
+}
+
+.flex-group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.product {
+    background-color: var(--white-100);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    display: grid;
+    max-width: 600px;
+}
+
+
+
+@media (min-width: 600px) {
+    .product {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.product-description {
+    display: grid;
+    gap: 1rem;
+    padding: 1.5rem;
+}
+
+.category{
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 0.8125rem;
+}
+
+.product-title{
+    font-size: 2rem;
+    font-family: var(--font-accent);
+    color: var(--very-dark-blue-900);
+}
+
+.sales-price{
+    font-size: 2rem;
+    font-family: var(--font-accent);
+    color: var(--dark-cyan-400);
+}
+
+.original-price{
+    
+}
